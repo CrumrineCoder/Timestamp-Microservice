@@ -25,3 +25,10 @@ $(function() {
 
 });
 */
+
+$(function(){
+  console.log("hello world");
+  $('form').submit(function(event) {
+    event.preventDefault();
+  })
+})
