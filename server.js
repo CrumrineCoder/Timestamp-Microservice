@@ -115,11 +115,14 @@ var listener = app.listen(process.env.PORT, function () {
 
 var express = require('express');
 var app = express();
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + '/views/index.html');
+});
 
 app.get("/:url", function (req, res) {
-  res.sendFile(__dirname + '/views/index.html');
+  //res.sendFile(__dirname + '/views/index.html');
   var id = req.params.url;
-  console.log(checkIfTimestamp(id));
+  res.send(checkIfTimestamp(id));
 //  console.log(url);
   //res.send(transformed date json)
   //var id = req.query;
